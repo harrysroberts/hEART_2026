@@ -1,0 +1,60 @@
+---
+title: "data_sources"
+format: html
+---
+
+**National Travel Survey 2002-2024**
+
+Travey survey data from England
+
+Used in `R/nts_histogram` and `R/nts_calibration`
+
+Available from the UK Data Service https://datacatalogue.ukdataservice.ac.uk/studies/study/5340
+
+Extracted in tab format to `input/raw/UKDA`
+
+File location `input/raw/UKDA-5340-tab/tab/trip_eul_2002-2024.tab`
+
+
+**UK 2011 Census Output Area Centroids**
+
+Centroids for UK Census 2011 Output Areas
+
+Available from UK Open Geography portal https://geoportal.statistics.gov.uk/datasets/90d74027a09147a18c9ca5a783942696_0/
+
+File extracted in csv format
+
+File location `input/raw/Output_Areas_Dec_2011_PWC_2022_-806071369276555851.csv`
+
+
+**UK 2011 Census Output Area Boundaries**
+
+Boundaries for UK Census 2011 Output Areas
+
+Available from UK Open Geography portal https://geoportal.statistics.gov.uk/datasets/8df53342abe043ab89534214206617ae_0/
+
+File extracted in gpkg format
+
+File location `input/raw/Output_Areas_Dec_2011_Boundaries_EW_BGC_2022_-4410048714460462685.gpkg`
+
+
+**WP101EW: Population (Workplace population) **
+
+Number of workplaces in census output areas in the Yorkshire and the Humber region
+
+Available from Nomis https://www.nomisweb.co.uk/census/2011/wp101ew
+
+File extracted in csv format
+
+File location `input/raw/workplace_population_yorkshire_humber.csv`
+
+
+**Ordnance Survey Multimodal Routing Network**
+
+Network dataset with all links, nodes and turn restrictions in the UK, including average car speeds
+
+Available to UK-based researchers from EDINA Digimap https://digimap.edina.ac.uk/ or otherwise commercially from the Ordnance Survey https://www.ordnancesurvey.co.uk/products/os-multi-modal-routing-network
+
+File extracted in gpkg format
+
+File location `input/raw/osmrn.gpkg`
