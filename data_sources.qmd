@@ -1,60 +1,71 @@
 ---
-title: "data_sources"
-format: html
+title: "Data sources"
+format:
+	html:
+		toc: true
+		code-fold: true
 ---
 
-**National Travel Survey 2002-2024**
+This page is the data manifest for the hEART 2026 poster. Download the source files from the providers below and place them at the exact paths shown. The `input/` directory is intentionally excluded from version control because some sources are large or access-controlled.
 
-Travey survey data from England
+## National Travel Survey, 2002-2024
 
-Used in `R/nts_histogram` and `R/nts_calibration`
+Travel survey data from England. The scripts use home-to-work trips from 2002-2019, before COVID-19 disruption.
 
-Available from the UK Data Service https://datacatalogue.ukdataservice.ac.uk/studies/study/5340
-
-Extracted in tab format to `input/raw/UKDA`
-
-File location `input/raw/UKDA-5340-tab/tab/trip_eul_2002-2024.tab`
-
-
-**UK 2011 Census Output Area Centroids**
-
-Centroids for UK Census 2011 Output Areas
-
-Available from UK Open Geography portal https://geoportal.statistics.gov.uk/datasets/90d74027a09147a18c9ca5a783942696_0/
-
-File extracted in csv format
-
-File location `input/raw/Output_Areas_Dec_2011_PWC_2022_-806071369276555851.csv`
+- Used by: `R/nts_histogram.R`, `R/nts_calibration.R`
+- Provider: [UK Data Service study 5340](https://datacatalogue.ukdataservice.ac.uk/studies/study/5340)
+- Required local file: `input/raw/UKDA-5340-tab/tab/trip_eul_2002-2024.tab`
+- Download format: TAB extraction
 
 
-**UK 2011 Census Output Area Boundaries**
+## 2011 Census Output Area boundaries
 
-Boundaries for UK Census 2011 Output Areas
+England and Wales Output Area boundaries used to construct Leeds centroids and map accessibility.
 
-Available from UK Open Geography portal https://geoportal.statistics.gov.uk/datasets/8df53342abe043ab89534214206617ae_0/
-
-File extracted in gpkg format
-
-File location `input/raw/Output_Areas_Dec_2011_Boundaries_EW_BGC_2022_-4410048714460462685.gpkg`
-
-
-**WP101EW: Population (Workplace population) **
-
-Number of workplaces in census output areas in the Yorkshire and the Humber region
-
-Available from Nomis https://www.nomisweb.co.uk/census/2011/wp101ew
-
-File extracted in csv format
-
-File location `input/raw/workplace_population_yorkshire_humber.csv`
+- Used by: `R/nts_calibration.R`
+- Provider: [UK Open Geography portal](https://geoportal.statistics.gov.uk/datasets/8df53342abe043ab89534214206617ae_0/)
+- Required local file: `input/raw/Output_Areas_Dec_2011_Boundaries_EW_BGC_2022_-4410048714460462685.gpkg`
+- Download format: GeoPackage
 
 
-**Ordnance Survey Multimodal Routing Network**
+## Leeds and UK local-authority boundaries
 
-Network dataset with all links, nodes and turn restrictions in the UK, including average car speeds
+The calibration script also requires the May 2025 local-authority boundary file in order to extract Leeds.
 
-Available to UK-based researchers from EDINA Digimap https://digimap.edina.ac.uk/ or otherwise commercially from the Ordnance Survey https://www.ordnancesurvey.co.uk/products/os-multi-modal-routing-network
+- Used by: `R/nts_calibration.R`
+- Required local file: `input/raw/LAD_MAY_2025_UK_BFC_V2_6634550694215771101.gpkg`
+- Source: [UK Open Geography portal](https://geoportal.statistics.gov.uk/)
 
-File extracted in gpkg format
 
-File location `input/raw/osmrn.gpkg`
+## WP101EW workplace population
+
+Workplace population counts for Yorkshire and the Humber census output areas.
+
+- Used by: `R/nts_calibration.R`
+- Provider: [Nomis, Census 2011 WP101EW](https://www.nomisweb.co.uk/census/2011/wp101ew)
+- Required local file: `input/raw/workplace_population_yorkshire_humber.csv`
+- Download format: CSV
+
+
+## Ordnance Survey Multimodal Routing Network
+
+Network links, nodes, turn restrictions, and average car speeds used to calculate travel times between Leeds Output Area centroids.
+
+- Used by: `R/nts_calibration.R` through the `losdos` package
+- Required local file: `input/raw/osmrn.gpkg`
+- Access: UK-based researchers can obtain it through [EDINA Digimap](https://digimap.edina.ac.uk/); commercial access is available from [Ordnance Survey](https://www.ordnancesurvey.co.uk/products/os-multi-modal-routing-network)
+- Download format: GeoPackage
+
+## Local data checklist
+
+Before running `R/nts_calibration.R`, confirm that these five files exist:
+
+```text
+input/raw/UKDA-5340-tab/tab/trip_eul_2002-2024.tab
+input/raw/Output_Areas_Dec_2011_Boundaries_EW_BGC_2022_-4410048714460462685.gpkg
+input/raw/LAD_MAY_2025_UK_BFC_V2_6634550694215771101.gpkg
+input/raw/workplace_population_yorkshire_humber.csv
+input/raw/osmrn.gpkg
+```
+
+File names are part of the current script interface. If a provider supplies a differently named export, rename or update the corresponding script path before running it.
