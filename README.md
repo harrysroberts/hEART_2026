@@ -1,4 +1,4 @@
-# hEART 2026 poster reproducible code
+# Replication code for a poster on the calibration of impedance functions using marginal impedance distributions
 
 This repository contains the R code used to generate figures for a poster presented at the European Association for Research in Transportation (hEART) conference in Paris in October 2026:
 
@@ -96,9 +96,15 @@ README.md          Reproduction guide
 
 ## Citation
 
-If you use this package in your research, the following citation is appreciated:
+If you use this code in your research, the following citations are appreciated:
 
-Roberts, H. S., Calastri, C., Batley, R. 2026. _Using marginal impedance distributions to calibrate impedance functions for accessibility measurement_ \[Poster\]. European Association for Research in Transportation (hEART), 2026, Paris.
+**Poster presentation**
+
+> Roberts, H. S., Calastri, C., Batley, R. 2026. _Using marginal impedance distributions to calibrate impedance functions for accessibility measurement_ \[Poster\]. European Association for Research in Transportation (hEART), 2026, Paris.
+
+**This repository**
+
+> Roberts, H. S. (2026) “Replication code for a poster on the calibration of impedance functions using marginal impedance distributions”. Zenodo. doi:10.5281/zenodo.TBC.
 
 ## License
 
