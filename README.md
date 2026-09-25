@@ -1,6 +1,10 @@
 # hEART 2026 poster reproducibility code
 
-This repository contains the R code used to generate figures for a poster presented at the hEART transport conference in Paris in October 2026.
+This repository contains the R code used to generate figures for a poster presented at the European Association for Research in Transportation (hEART) conference in Paris in October 2026
+
+> Roberts, H. S., Calastri, C., Batley, R. (2026) "Evaluating open-source approaches for estimating unobserved trip attributes in transport choice modelling". The 58th Universities’ Transport Study Group Annual Conference, 15 July, Guildford, UK.
+
+The paper presents "Weighted Marginal Distribution Calibration" as a method to correct for spatially-induced bias in impedance function calibration, using a weight function to capture this bias. This method has been implemented in the `wmdc` package available separately from the author's GitHub at [harrysroberts/wmdc](https://github.com/harrysroberts/wmdc).
 
 ## Start here
 
@@ -28,13 +32,13 @@ The scripts use paths relative to the repository root. Running them from another
 
 | Script | Purpose | Data required | Output |
 | --- | --- | --- | --- |
-| [`R/linear_growth_demo_plot.r`](R/linear_growth_demo_plot.r) | Demonstrates linear growth of destination availability with distance | None | `output/uniform.png` |
-| [`R/disc_demo_plot.R`](R/disc_demo_plot.R) | Illustrates paired points and distance-weighted connections inside a disc | None | `output/disc_plot.png` |
-| [`R/boundary_interference_demo_plot.R`](R/boundary_interference_demo_plot.R) | Shows how a study-area boundary changes destination availability | None | `output/boundary_interference.png` |
-| [`R/p_g_f_curves.R`](R/p_g_f_curves.R) | Plots spatial weight, impedance, and their product | None | `output/pgf_graph.png` |
-| [`R/simulation_experiment.R`](R/simulation_experiment.R) | Tests WMDC recovery in simulated disc-shaped study areas | None | `output/heatmap.png` |
 | [`R/nts_histogram.R`](R/nts_histogram.R) | Plots the National Travel Survey home-to-work travel-time distribution | National Travel Survey | `output/impedance_histogram.png` |
-| [`R/nts_calibration.R`](R/nts_calibration.R) | Calibrates impedance functions and maps Leeds accessibility | NTS, census geography, workplace data, and OS-MRN | `output/impedance_functions_graph.png`, `output/accessibility_plot.png` |
+| [`R/linear_growth_demo_plot.r`](R/linear_growth_demo_plot.r) | Demonstrates linear growth of destination availability with distance | None | `output/uniform.png` |
+| [`R/p_g_f_curves.R`](R/p_g_f_curves.R) | Plots spatial weight function, impedance function, and the marginal impedance distribution | None | `output/pgf_graph.png` |
+| [`R/disc_demo_plot.R`](R/disc_demo_plot.R) | Illustrates simulated paired points inside a disc | None | `output/disc_plot.png` |
+| [`R/simulation_experiment.R`](R/simulation_experiment.R) | Simulates a trip distribution using a doubly-constrained gravity model and tests the ability of WMDC to recover the input parameter | None | `output/heatmap.png` |
+| [`R/boundary_interference_demo_plot.R`](R/boundary_interference_demo_plot.R) | Illustrates how the boundary of the study area induces a reduction in destination availability at higher impedance levels | None | `output/boundary_interference.png` |
+| [`R/nts_calibration.R`](R/nts_calibration.R) | Calibrates an impedance function over English NTS data using WMDC, plots this function against the survival curve and maps the accessibility of Leeds under both the WMDC-calibrated impedance function and using the survival curve as the impedance function| National Travel Survey, census geography, workplace data, and OS-MRN | `output/impedance_functions_graph.png`, `output/accessibility_plot.png` |
 
 ## Dependencies
 
@@ -59,10 +63,10 @@ The scripts are independent, so there is no required execution order. A quick sm
 
 ```sh
 Rscript R/linear_growth_demo_plot.r
-Rscript R/disc_demo_plot.R
-Rscript R/boundary_interference_demo_plot.R
 Rscript R/p_g_f_curves.R
+Rscript R/disc_demo_plot.R
 Rscript R/simulation_experiment.R
+Rscript R/boundary_interference_demo_plot.R
 ```
 
 Once the source data is available, run the data-dependent figures:
@@ -92,11 +96,11 @@ README.md          Reproduction guide
 
 ## Citation
 
-If you use this package in your research, the following citations are appreciated:
+If you use this package in your research, the following citation is appreciated:
 
 **Poster presented at hEART 2026:**
 
- Roberts, H. S., Calastri, C., Batley, R. 2026. _Using marginal impedance distributions to calibrate impedance functions for accessibility measurement_ \[Poster\]. European Association for Research in Transportation (hEART), 2026, Paris.
+Roberts, H. S., Calastri, C., Batley, R. 2026. _Using marginal impedance distributions to calibrate impedance functions for accessibility measurement_ \[Poster\]. European Association for Research in Transportation (hEART), 2026, Paris.
 
 ## License
 
