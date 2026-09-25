@@ -1,6 +1,6 @@
 # hEART 2026 poster reproducibility code
 
-This repository contains the R code used to generate figures for a poster presented at the European Association for Research in Transportation (hEART) conference in Paris in October 2026
+This repository contains the R code used to generate figures for a poster presented at the European Association for Research in Transportation (hEART) conference in Paris in October 2026:
 
 > Roberts, H. S., Calastri, C., Batley, R. (2026) "Evaluating open-source approaches for estimating unobserved trip attributes in transport choice modelling". The 58th Universities’ Transport Study Group Annual Conference, 15 July, Guildford, UK.
 
