@@ -1,8 +1,8 @@
-# hEART 2026 poster reproducibility code
+# hEART 2026 poster reproducible code
 
 This repository contains the R code used to generate figures for a poster presented at the European Association for Research in Transportation (hEART) conference in Paris in October 2026:
 
-> Roberts, H. S., Calastri, C., Batley, R. (2026) "Evaluating open-source approaches for estimating unobserved trip attributes in transport choice modelling". The 58th Universities’ Transport Study Group Annual Conference, 15 July, Guildford, UK.
+> Roberts, H. S., Calastri, C., Batley, R. 2026. _Using marginal impedance distributions to calibrate impedance functions for accessibility measurement_ \[Poster\]. European Association for Research in Transportation (hEART), 2026, Paris.
 
 The paper presents "Weighted Marginal Distribution Calibration" as a method to correct for spatially-induced bias in impedance function calibration, using a weight function to capture this bias. This method has been implemented in the `wmdc` package available separately from the author's GitHub at [harrysroberts/wmdc](https://github.com/harrysroberts/wmdc).
 
