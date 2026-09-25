@@ -1,8 +1,10 @@
 # Replication code for a poster on the calibration of impedance functions using marginal impedance distributions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22965874.svg)](https://doi.org/10.5281/zenodo.22965874)
+
 This repository contains the R code used to generate figures for a poster presented at the European Association for Research in Transportation (hEART) conference in Paris in October 2026:
 
-> Roberts, H. S., Calastri, C., Batley, R. 2026. _Using marginal impedance distributions to calibrate impedance functions for accessibility measurement_ \[Poster\]. European Association for Research in Transportation (hEART), 2026, Paris.
+> Roberts, H. S., Calastri, C., & Batley, R. (2026). _Using Marginal Impedance Distributions to Calibrate Impedance Functions for Accessibility Measurement_. Poster presented at the European Association for Research in Transportation (hEART), Paris, France, 30 September.
 
 The paper presents "Weighted Marginal Distribution Calibration" as a method to correct for spatially-induced bias in impedance function calibration, using a weight function to capture this bias. This method has been implemented in the `wmdc` package available separately from the author's GitHub at [harrysroberts/wmdc](https://github.com/harrysroberts/wmdc).
 
@@ -96,15 +98,31 @@ README.md          Reproduction guide
 
 ## Citation
 
-If you use this code in your research, the following citations are appreciated:
+If you use this code in your research, please cite the poster and this repository as follows
 
-**Poster presentation**
+> Roberts, H.S., Calastri, C. and Batley, R. 2026. Using Marginal Impedance Distributions to Calibrate Impedance Functions for Accessibility Measurement In: _14th Symposium of the European Association for Research in Transportation (hEART)_. Paris, France.
 
-> Roberts, H. S., Calastri, C., Batley, R. 2026. _Using marginal impedance distributions to calibrate impedance functions for accessibility measurement_ \[Poster\]. European Association for Research in Transportation (hEART), 2026, Paris.
+> Roberts, H. S. 2026. Replication code for a poster on the calibration of impedance functions using marginal impedance distributions. Available from: https://doi.org/10.5281/zenodo.22965874.
 
-**This repository**
+**BibTeX:**
 
-> Roberts, H. S. (2026) “Replication code for a poster on the calibration of impedance functions using marginal impedance distributions”. Zenodo. doi:10.5281/zenodo.TBC.
+```bibtex
+@inproceedings{roberts_using_2026,
+	address = {Paris, France},
+	title = {Using {Marginal} {Impedance} {Distributions} to {Calibrate} {Impedance} {Functions} for {Accessibility} {Measurement}},
+	booktitle = {14th {Symposium} of the {European} {Association} for {Research} in {Transportation} ({hEART})},
+	author = {Roberts, H. S. and Calastri, C. and Batley, R.},
+	year = {2026},
+}
+
+@software{roberts_2026_22965874,
+  author        = {Roberts, H. S.},
+  title         = {Replication code for a poster on the calibration of impedance functions using marginal impedance distributions},
+  year          = 2026,
+  version       = {v1.0.0},
+  url           = {https://doi.org/10.5281/zenodo.22965874}
+}
+```
 
 ## License
 
