@@ -98,8 +98,6 @@ README.md          Reproduction guide
 
 If you use this package in your research, the following citation is appreciated:
 
-**Poster presented at hEART 2026:**
-
 Roberts, H. S., Calastri, C., Batley, R. 2026. _Using marginal impedance distributions to calibrate impedance functions for accessibility measurement_ \[Poster\]. European Association for Research in Transportation (hEART), 2026, Paris.
 
 ## License
